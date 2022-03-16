@@ -1,15 +1,16 @@
 package com.kafka.microservice.listener;
 
+import com.kafka.microservice.model.Message;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class KafkaListeners {
 
-    // Same value in KafkaTopicConfig.newTopic()
-    @KafkaListener(topics = "KafkaMicroserviceTest", groupId = "testGroupId")
-    public void listener(String data) {
-        System.out.println("Listener Received: " + data + " 👌");
+    // Same value in KafkaProducerConfig.newTopic() and KafkaConsumerConfig.consumerFactory()
+    @KafkaListener(topics = "KafkaMicroserviceTest", groupId = "KafkaGroupId", containerFactory = "messageListenerFactory")
+    public void listener(Message message) {
+        System.out.println("Listener Received: " + message);
     }
 
 }
