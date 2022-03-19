@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 
 @RestController
-@RequestMapping("/messages")
+@RequestMapping("/message")
 public class MessageController {
 
     @Autowired
