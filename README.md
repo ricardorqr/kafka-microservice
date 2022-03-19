@@ -1,4 +1,4 @@
-# Kafka + Spring Boot and Docker
+# Kafka + Spring Boot + Docker
 
 This is an example of microservice using Spring Boot and Kafka. In this example, Kafka is using a customized [producer](src/main/java/com/kafka/microservice/config/KafkaProducerConfig.java) and [consumer](src/main/java/com/kafka/microservice/config/KafkaConsumerConfig.java), the _topic_ `KafkaMicroserviceTest`, the _groupId_ `KafkaGroupId` and the _listener_ `messageListenerFactory`.
 
